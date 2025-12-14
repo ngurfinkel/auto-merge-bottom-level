@@ -25,11 +25,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
+          # Initialize submodules if needed
+          git submodule update --init --recursive
+          
           # Update the submodule to latest
-          cd lib/auto-merge-bottom-level
-          git fetch origin main
-          git checkout origin/main
-          cd ../..
+          git submodule update --remote lib/auto-merge-bottom-level
           
           # Check if there are changes
           if git diff --quiet; then
