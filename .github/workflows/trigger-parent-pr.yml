@@ -26,7 +26,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           # Update the submodule to latest
-          cd lib/auto-merge-bottom-level
+          cd lib/halo-auto-merge-test
           git fetch origin main
           git checkout origin/main
           cd ../..
@@ -40,7 +40,7 @@ jobs:
           # Create branch and commit
           BRANCH="submodule_auto_${{ github.sha }}"
           git checkout -b "$BRANCH"
-          git add lib/auto-merge-bottom-level
+          git add lib/halo-auto-merge-test
           git commit -m "chore: update auto-merge-bottom-level to latest commit"
           git push origin "$BRANCH"
           
